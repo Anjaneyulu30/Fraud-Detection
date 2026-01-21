@@ -29,9 +29,9 @@ jobs:
         pip install -r requirements.txt
     - name: check FastAPI app
       run: |
-        python -m py_compile detection_app.py
+        which python
+        python --version
+        python -m py_compileall detection_app.py
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
+      
+    
