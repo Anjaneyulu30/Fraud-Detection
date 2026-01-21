@@ -5,4 +5,3 @@
  -created fastapi app
  #run using
  uvicorn filename:app --reload 
- created github actions for CICD
