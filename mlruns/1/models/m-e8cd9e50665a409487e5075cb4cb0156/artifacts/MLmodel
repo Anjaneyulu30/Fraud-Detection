@@ -1,0 +1,22 @@
+artifact_path: file:///c:/Users/badin/OneDrive/Desktop/Fraud Detection/Fraud-Detection/mlruns/1/models/m-e8cd9e50665a409487e5075cb4cb0156/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.14
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+mlflow_version: 3.8.1
+model_id: m-e8cd9e50665a409487e5075cb4cb0156
+model_size_bytes: 1207
+model_uuid: m-e8cd9e50665a409487e5075cb4cb0156
+prompts: null
+run_id: 48e618628a1d498f97ae45320f4fda40
+utc_time_created: '2026-01-19 15:06:19.660295'

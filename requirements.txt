@@ -9,5 +9,6 @@ xgboost
 fastapi
 uvicorn
 joblib
+pydantic
 
 
