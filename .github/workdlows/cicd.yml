@@ -1,0 +1,42 @@
+name: Fraud Detection API CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  fraud-detection-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️ Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️ Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3️ Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # 4️ Import FastAPI app (checks model & scaler load)
+      - name: Import Fraud Detection API
+        run: |
+          python -c "import detection_app"
+
+      # 5️ Run model loading test
+      - name: Run model test
+        run: |
+          python load_model_test.py
+
+      # 6️ Start FastAPI server
+      - name: Start Fraud Detection API
+        run: |
+          uvicorn detection_app:app --reload
